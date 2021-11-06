@@ -1,7 +1,21 @@
+import React, { useEffect } from 'react';
+import { httpClient } from './core/apiService/httpClient';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const get = () => {
+    httpClient.get('weather', {
+      q: 'London'
+    })
+   
+  }
+
+
+  useEffect(() => {
+    get();
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
