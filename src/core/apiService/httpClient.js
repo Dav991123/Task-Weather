@@ -1,4 +1,4 @@
-import { HTTP_METHODS } from '../constants/apiConstants';
+import { HTTP_METHODS } from '../constants/api';
 import { DOMAIN, API_KEY, VERSION1 } from '../constants/urls';
 import queryString from 'query-string'
 
@@ -19,9 +19,10 @@ class HttpClient {
     async request(url, options) {
         const { method } = options;
         try{
-            return fetch(url, {
+            const response = await fetch(url, {
                 method
-            })
+            });
+            return response.json();
         }catch(error) {
             return error
         }   

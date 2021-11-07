@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { httpClient } from './core/apiService/httpClient';
+import React from 'react';
 import WeatherGame from './view/pages/weatherGame';
 import './App.css';
 
